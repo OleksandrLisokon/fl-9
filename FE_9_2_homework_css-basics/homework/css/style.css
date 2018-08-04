@@ -1,0 +1,124 @@
+@media print {
+    .tm-sidebar, #about, section:not(:first-of-type) {
+        display: none;
+    }
+    .tm-main-content {
+        margin: 0;
+        padding: 0;        
+    }
+    .tm-banner {
+        height: 200px;
+        padding: 30px 20px 0 60px;
+        margin-bottom: 30px;
+    }
+    .tm-content-box {
+        margin-bottom: 20px;
+    }
+    .tm-team-description-container {
+        max-width: 95%;
+    }
+    .flex-2-col {
+        display: block;
+        margin-left: 60px;
+    }
+    .flex-item:last-child {
+        text-align: center;
+    }
+    .pad {
+        padding: 0 20px;
+    }
+    h2.tm-section-title {
+        color: blue;
+    } 
+}
+@media screen {
+    .thumbnail {
+        border-radius: 50%;
+    }
+    .box-bg:hover {
+        background: #00bcd4;
+    }
+    .box-bg:hover h2{
+        color: white;
+        font-weight: bold;
+    }
+    p::first-letter {
+        color: #76cdd7;
+        font-size: 30px;
+    }
+    .tm-sidebar, .tm-banner, .tm-content-box {
+        box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.5);
+    }
+    section::before, #home::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 25px 125px 0 0;
+        border-color: #00bcd4 transparent transparent transparent;
+    }
+    .blocks::before {
+        content: none;
+    }
+    #ideas h2 {
+        color: gainsboro;
+        letter-spacing: 5px;
+    }
+    h2 + p {
+        font-style: italic;
+    }
+    p.tm-section-description {
+        line-height: 200%;
+        text-indent: 25px;
+    }
+    .heading h2 {
+        text-align: center;
+        color: #76cdd7;
+    }
+    .heading a {
+        color: #000000;
+    }
+    .heading a:visited {
+        color: silver;
+    }
+    .heading a:hover {
+        color: #76cdd7;
+        text-decoration: underline;
+        text-decoration-style: double;
+    }
+    .heading .text:after {
+        content: "New";
+        color: red;
+        vertical-align: super;
+        font-size: smaller;
+    }
+    .boxes .box:nth-child(2n+1) {
+        background-color: #f1f1f1;
+    }
+    .box h2 {
+        font-size: 2.8em;
+    }
+    .box p {
+        font-size: 1.41em; 
+    }
+    .box p::first-letter {
+        color: #000000;
+    }
+    .tm-nav-item:not(:last-child) {
+        border-bottom: 2px dotted silver;
+    }
+    .form-control, .submit-btn {
+        color: red;
+    }
+    .mandatory-field:after {
+        content: "*";
+        color: red;
+        font-weight: bold;
+    }
+    .submit-btn:hover {
+        background: #00bcd4;
+        color: white;
+        border: #00bcd4;
+    }    
+}
