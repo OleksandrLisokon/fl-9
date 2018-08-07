@@ -1,0 +1,154 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: $fontStyle;
+    font-size: 10px;
+    background-color: $bgColor;
+    color: $postTextColor;    
+    img { 
+        max-width: 100%;        
+    }
+    a{        
+        text-decoration: none;
+    }    
+    width: 100vw;
+}
+.main-wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    header {
+        width: 100%;
+        position: relative;
+        .logo {
+            display: inline-block;
+            width: 80*0.35vw;        
+        }
+        nav {
+            display: inline-block;
+            vertical-align: bottom;                
+            width: 80*0.64vw;                
+            margin: 50px 0;
+            padding: 25px;
+            border-top: 1px solid $postTextColor;
+            border-bottom: 1px solid $postTextColor;
+            text-align: center; 
+            text-transform: uppercase;
+            a {                
+                margin: 10%;
+                text-decoration: none; 
+                font-size: $pSize;               
+                color: $headingColor;
+            }
+        } 
+    }
+    .toolbar {
+        text-align: right;
+        margin-bottom: 30px;
+        input {
+            border: 1px solid $headingColor;
+            padding: 15px;
+            font-size: $pSize;
+            color: $headingColor;
+            background: $bgColor;
+            &::placeholder {
+                color: $headingColor;
+            }
+        }
+    }
+    .post-list {
+        width: 100%;
+        article:nth-child(2n-1){
+            margin: 0 30px 30px 0;            
+        }
+        article:nth-child(2n){
+            margin: 0 0 30px 0;            
+        }
+        article {
+            display: inline-block;
+            vertical-align: top;
+            background-color: $postBgColor;  
+            width: 48%;
+            padding: 10px;  
+            .post-description {
+                color: $postDescrColor;
+                font-size: $pSize/1.2;
+                padding: 10px;
+                border-bottom: 1px solid $postTextColor;
+            }
+            h3 {
+                color: $postHeadingColor;
+                padding: 0 10px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }         
+            p {
+                color: $postTextColor;
+                font-size: $pSize;
+                line-height: 1.5;
+                padding: 0 10px;
+                margin-top: 0;
+            }     
+        }
+    }
+    #about {
+        width: 100%;
+        margin-bottom: 45px;
+        h1 {
+            color: $headingColor;
+            text-align: right;                      
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: $pSize;
+            line-height: 1.5;
+        }
+    }
+    .contact-form {
+        text-align: right;
+        width: 100%;
+        h1 {
+            margin-bottom: 0;
+            color: $headingColor;            
+        }
+        h4 {
+            margin: 0;
+            color: $headingColor;            
+        }  
+        .form-control {
+            width: 100%;
+            margin-top: 10px;
+            border: 1px solid $postTextColor;
+            padding: 15px;
+            font-size: $pSize;
+            color: $postTextColor;
+            background: $bgColor;
+            &::placeholder {
+                color: $postTextColor;
+            }
+        }
+        .submit-btn {
+            color: white;
+            background-color: $headingColor;
+            border: 1px solid $headingColor;
+            font-size: $pSize;
+            text-transform: uppercase;
+            padding: 10px;
+            margin-top: 20px;
+            width: 25%;
+            &:hover {
+                background-color: darken($headingColor, 10);
+            }
+        }
+    }
+    footer {
+        margin-top: 10px;
+        font-size: $pSize/1.4;
+    }
+}

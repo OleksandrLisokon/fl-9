@@ -1,0 +1,24 @@
+$bgColor: #efefef;
+$headingColor: #FC5830;
+$postBgColor: #FFFFFF;
+$postHeadingColor: #617c89;
+$postTextColor: #757575;
+$postDescrColor: lighten($postTextColor, 30%);
+$fontStyle: Georgia, Times, 'Times New Roman', serif;
+$pSize: 2.2rem;
+$map-heading-size: ( 	
+			h1: 4.0rem,  
+			h2: 3.4rem,  
+			h3: 2.4rem,  
+			h4: 2.0rem,  
+			h5: 1.4rem,  
+			h6: 1.2rem   
+        );
+@for $i from 1 through 6 {
+    h#{$i} {  	
+        font-family: $fontStyle;                  
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: map-get($map-heading-size, h#{$i});
+    }
+}

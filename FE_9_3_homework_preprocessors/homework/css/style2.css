@@ -1,0 +1,161 @@
+h1 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 4rem; }
+
+h2 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3.4rem; }
+
+h3 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.4rem; }
+
+h4 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem; }
+
+h5 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem; }
+
+h6 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 10px;
+  background-color: #efefef;
+  color: #757575;
+  width: 100vw; }
+  html img, body img {
+    max-width: 100%; }
+  html a, body a {
+    text-decoration: none; }
+
+.main-wrapper {
+  width: 80vw;
+  margin: 0 auto; }
+  .main-wrapper header {
+    width: 100%;
+    position: relative; }
+    .main-wrapper header .logo {
+      display: inline-block;
+      width: 28vw; }
+    .main-wrapper header nav {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 51.2vw;
+      margin: 50px 0;
+      padding: 25px;
+      border-top: 1px solid #757575;
+      border-bottom: 1px solid #757575;
+      text-align: center;
+      text-transform: uppercase; }
+      .main-wrapper header nav a {
+        margin: 10%;
+        text-decoration: none;
+        font-size: 2.2rem;
+        color: #FC5830; }
+  .main-wrapper .toolbar {
+    text-align: right;
+    margin-bottom: 30px; }
+    .main-wrapper .toolbar input {
+      border: 1px solid #FC5830;
+      padding: 15px;
+      font-size: 2.2rem;
+      color: #FC5830;
+      background: #efefef; }
+      .main-wrapper .toolbar input::placeholder {
+        color: #FC5830; }
+  .main-wrapper .post-list {
+    width: 100%; }
+    .main-wrapper .post-list article:nth-child(2n-1) {
+      margin: 0 30px 30px 0; }
+    .main-wrapper .post-list article:nth-child(2n) {
+      margin: 0 0 30px 0; }
+    .main-wrapper .post-list article {
+      display: inline-block;
+      vertical-align: top;
+      background-color: #FFFFFF;
+      width: 48%;
+      padding: 10px; }
+      .main-wrapper .post-list article .post-description {
+        color: #c2c2c2;
+        font-size: 1.8333333333rem;
+        padding: 10px;
+        border-bottom: 1px solid #757575; }
+      .main-wrapper .post-list article h3 {
+        color: #617c89;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 5px; }
+      .main-wrapper .post-list article p {
+        color: #757575;
+        font-size: 2.2rem;
+        line-height: 1.5;
+        padding: 0 10px;
+        margin-top: 0; }
+  .main-wrapper #about {
+    width: 100%;
+    margin-bottom: 45px; }
+    .main-wrapper #about h1 {
+      color: #FC5830;
+      text-align: right; }
+    .main-wrapper #about img {
+      width: 100%; }
+    .main-wrapper #about p {
+      font-size: 2.2rem;
+      line-height: 1.5; }
+  .main-wrapper .contact-form {
+    text-align: right;
+    width: 100%; }
+    .main-wrapper .contact-form h1 {
+      margin-bottom: 0;
+      color: #FC5830; }
+    .main-wrapper .contact-form h4 {
+      margin: 0;
+      color: #FC5830; }
+    .main-wrapper .contact-form .form-control {
+      width: 100%;
+      margin-top: 10px;
+      border: 1px solid #757575;
+      padding: 15px;
+      font-size: 2.2rem;
+      color: #757575;
+      background: #efefef; }
+      .main-wrapper .contact-form .form-control::placeholder {
+        color: #757575; }
+    .main-wrapper .contact-form .submit-btn {
+      color: white;
+      background-color: #FC5830;
+      border: 1px solid #FC5830;
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      padding: 10px;
+      margin-top: 20px;
+      width: 25%; }
+      .main-wrapper .contact-form .submit-btn:hover {
+        background-color: #f53304; }
+  .main-wrapper footer {
+    margin-top: 10px;
+    font-size: 1.5714285714rem; }
