@@ -1,0 +1,188 @@
+/* 
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+/* :root {
+  --bg-color--dark: #0a1223;
+  --bg-color--light: #fff;
+  --link: #5d5d5d;
+  --link--active: #54597d;
+  --link--hover: #54597d;
+  --article-title: #ddd;
+  --article-title--dark: #000;
+  --thumbnail--description: #5d5d5d;
+
+  /* These styles are needed only for media query max-width: 575px */
+
+  /* The 'Up' button (circle button at right bottom corner) */
+  /* --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747;
+} */
+
+/* Your styles go here */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html, body {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 100vw;
+    background-color: #0a1223;
+    color: #ddd;
+    overflow: auto;
+}
+.container {       
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 90%;
+    margin: 0 auto;
+}
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+a {
+    margin: 1rem;
+    text-decoration: none;
+    color: #5d5d5d;
+}
+a:hover, a:active, .active {
+    color: #54597d;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 10rem;
+}
+.heading {
+    height: 40vh;
+    display: flex;
+    text-align: center;
+}
+h1 {
+    font-size: 3.1rem;
+    margin: auto;
+}
+article {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem auto;
+}
+article:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+article div {
+    width: 45%;
+}
+.article-description {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+h2 {
+    font-size: 2rem;
+    color: #ddd;
+    background: linear-gradient(to right, #ddd, #5d5d5d);   
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-bottom: 2rem;
+}
+p {
+    color: #5d5d5d;
+    text-align: justify;
+    text-indent: 1rem;
+}
+.article-image img{
+    max-width: 100%;
+}
+.toTop {
+    display: none;
+    border: none;
+    border-radius: 50%;
+    background-color: #5ebcff;
+    color: #fff;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;    
+    padding: 1rem;
+    box-shadow: 5px 10px 10px #ddd;
+}
+@media screen and (max-width: 991px) {
+    nav {
+        justify-content: center;
+    }
+    article {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        width: 90%;
+        margin: 0 auto;
+    }
+    article:nth-child(odd) {
+        flex-direction: column;
+    }
+    article div {
+        width: 100%;        
+    }
+    .article-image{
+        width: 90%;
+        align-self: center;
+        margin: 2rem auto;
+    }
+} 
+@media screen and (max-width: 575px) {
+    html, body {
+        background-color: #fff;
+        color: #000;
+    }
+    .container {       
+        width: 100%;
+    }
+    h1 {
+        width: 85%;
+    }
+    nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    nav a {
+        margin: 0;
+        padding: 1rem;
+        border-bottom: 1px solid #484747;
+    }
+    nav a:hover, nav a:active, .active {
+        font-weight: bold;
+    }
+    article {
+        width: 90%;
+    }   
+    article div {
+        width: 90%;        
+    }
+    h2 {
+        font-size: 2rem;
+        color: #484747;
+        background: linear-gradient(to right, #484747, #484747);   
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        margin-bottom: 2rem;
+    }
+    .toTop {
+        display: block;
+    }
+}
+  
