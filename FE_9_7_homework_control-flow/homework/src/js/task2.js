@@ -17,6 +17,7 @@ function newGame() {
     attempts = 3;
     userPrize = 0;
     prize = startPrize;
+    possiblePrize = startPrize;
     maxNum = startMaxNum;
     guessGame();
 }
@@ -29,9 +30,9 @@ function guessGame() {
             if (confirm('Do you want to play again?')) {
                 newGame(); 
             } else {
-                alert(`You did not become a millionaire, but can.`);
-                break;
+                alert(`You did not become a millionaire, but can.`);                         
             }
+            break;      
         }
         
         userNumber = parseInt(prompt(`Enter a number from 0 to ${maxNum}\nAttempts left: ` 
@@ -42,15 +43,15 @@ function guessGame() {
             userPrize += possiblePrize;                        
             let winGame = confirm(`Congratulation!\nYour prize is: ${userPrize}$ Do you want to continue?`);
             if (!winGame) {
-                alert(`Thank you for a game. Your prize is: ${userPrize}$`);                
-                break;
+                alert(`Thank you for a game. Your prize is: ${userPrize}$`); 
             } else {
                 attempts = 3;
                 maxNum *= 2;
                 prize *= 3;
                 possiblePrize = prize;
                 guessGame();
-            }            
+            }
+            break;            
         }
         attempts--;
         possiblePrize = Math.floor(possiblePrize/2);
