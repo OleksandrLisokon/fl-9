@@ -4,3 +4,5 @@ function isBigger (a, b) {
 function isSmaller (a, b) {
     return !isBigger(a, b);
 }
+isBigger();
+isSmaller();

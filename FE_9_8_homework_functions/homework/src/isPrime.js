@@ -1,9 +1,10 @@
 function isPrime (num) {
-    if (num < 4) {
+    let magicNum = 3;
+    if (num <= magicNum) {
         return true;
     } else {
         for (let i = 2; i < num; i++) {
-            if (num % i == 0) {
+            if (num % i === 0) {
                 return false; 
             } else {
                 return true;
@@ -11,4 +12,5 @@ function isPrime (num) {
         }
     }    
 }
+isPrime();
 

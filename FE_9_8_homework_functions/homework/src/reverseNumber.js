@@ -10,3 +10,4 @@ function reverseNumber(n) {
         return parseInt(reversed);
     }
 }
+reverseNumber();
