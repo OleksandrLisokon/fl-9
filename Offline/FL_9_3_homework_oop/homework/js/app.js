@@ -1,50 +1,47 @@
-function ShoppingCart (object) {
-    this.name = object.name;
-    this.owner = object.owner;
-    this.maxCount = object.maxCount;
+function ShoppingCart (name, owner, maxCount) {
+    this.name = name;
+    this.owner = owner;
+    this.maxCount = maxCount;
     let productList = [];
     let dateOfAddingToCart = [];
     let _logs = [];
     _logs.push(`${this.name} was created in ${new Date()}`);
 
     this.addNewProduct = function (product) {
-        if (product instanceof Product) {
-            if (productList.length === this.maxCount) {
-                let minPrice = Infinity;
-                let index;
-                for (let i = 0; i < productList.length; i++) {
-                    if (minPrice > productList[i].getPrice()) {
-                        minPrice = productList[i].getPrice();
-                        index = i;
+        if (!productList.includes(product)) {
+            if (product instanceof Product) {
+                if (productList.length === this.maxCount) {
+                    let minPrice = Infinity;
+                    let id;
+                    for (let i = 0; i < productList.length; i++) {
+                        if (minPrice > productList[i].getPrice()) {
+                            minPrice = productList[i].getPrice();
+                            id = i;
+                        }
                     }
+                    this.removeProduct(id);
                 }
-                productList.splice(index, 1).push(product);
-            } else {
                 productList.push(product);
+                product.add(this.name);
+                dateOfAddingToCart.push(new Date());
+                _logs.push(`${product.name} was added to ${this.name} on ${new Date()}`);
+            } else {
+                console.log(`Please try to add Product instance`);
             }
-            product.add(this.name);
-            dateOfAddingToCart.push(new Date());
-            _logs.push(`${product.name} was added to ${this.name} on ${new Date()}`);
-        } else {
-            console.log(`Please try to add Product instance`);
         }
 
         return this;
     }
 
-    this.removeProduct = function (product) {
-        if (product instanceof Product) {
-            for (let i = 0; i < productList.length; i++) {
-                if (productList[i].name === product.name) {
-                    _logs.push(`${productList[i].name} was removed from ${this.name} on ${new Date()}`);
-                    productList[i].removeProduct(this.name);
-                    productList.splice(i, 1);
-                    dateOfAddingToCart.splice(i, 1);
-                    return this;
-                }
-            }
+    this.removeProduct = function (id) {
+        if (id >= 0 && id <= productList.length) {
+            _logs.push(`${productList[id].name} was removed from ${this.name} on ${new Date()}`);
+            productList[id].removeProduct(this.name);
+            productList.splice(id, 1);
+            dateOfAddingToCart.splice(id, 1);
+            return this;
         } else {
-            console.log(`Please try to add Product instance`);
+            console.log(`Please set the product ID`);
         }
 
         return this;
@@ -86,10 +83,10 @@ function ShoppingCart (object) {
     }
 }
 
-function Product (object) {
-    this.name = object.name;
-    this.description = object.description;
-    let _price = object.price;
+function Product (name, description, price) {
+    this.name = name;
+    this.description = description;
+    let _price = price;
     let cartName = ``;
     let _logs = [];
 
@@ -133,55 +130,89 @@ function Product (object) {
     }
 }
 
-const banana = new Product({
-    name: 'banana',
-    description: {
-      color: 'yellow',
-      size: 'medium'
+const banana = new Product(
+    'banana',
+    {
+        color: 'yellow',
+        size: 'medium'
     },
-    price: 45
-  });
+    45
+);
   
-  const apple = new Product({
-    name: 'apple',
-    description: {
-      color: 'red',
-      size: 'small'
+const apple = new Product(
+    'apple',
+    {
+        color: 'red',
+        size: 'small'
     },
-    price: 30
-  });
+    30
+);
 
-  const avocado = new Product({
-    name: 'avocado',
-    description: {
-      color: 'green',
-      size: 'small'
+const avocado = new Product(
+    'avocado',
+    {
+        color: 'green',
+        size: 'small'
     },
-    price: 20
-  });
+    20
+);
+
+const mellon = new Product(
+    'mellon',
+    {
+        color: 'yellow',
+        size: 'large'
+    },
+    40
+);
+
+const kiwi = new Product(
+    'kiwi',
+    {
+        color: 'green',
+        size: 'small'
+    },
+    15
+);
+
+const peach = new Product(
+    'peach',
+    {
+        color: 'yellow',
+        size: 'small'
+    },
+    35
+);
+
+const stevesShopCart = new ShoppingCart(
+    'stevesCart',
+    'Steve',
+    5
+);
   
-  const stevesShopCart = new ShoppingCart({
-    name: 'stevesCart',
-    owner: 'Steve',
-    maxCount: 5
-  });
-  
-  stevesShopCart
+stevesShopCart
     .addNewProduct(banana)
     .addNewProduct(banana)
+    .addNewProduct(mellon)
+    .addNewProduct(peach)
+    .addNewProduct(kiwi)
     .addNewProduct(apple)
-    .removeProduct(banana)
     .addNewProduct(avocado);
+
+console.log(stevesShopCart.getProducts());
 
 console.log(stevesShopCart.getHistory());
 
-console.log(banana.getHistory());
+console.log(kiwi.getHistory());
 
 console.log('avarage price:', stevesShopCart.getAvaragePrice());
 console.log('total price:', stevesShopCart.getTotalPrice());
 
 stevesShopCart
-.addNewProduct('apple string');
+    .removeProduct(1);
+
+stevesShopCart
+    .addNewProduct('apple string');
 
 avocado
   .setPrice(10)
