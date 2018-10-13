@@ -1,0 +1,54 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html, body {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    width: 100vw;
+}
+.container {
+    display: flex;
+    margin: 3em auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+}
+.heading {
+    font-size: 40px;
+}
+form {    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+.water {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    animation: animate 15s linear infinite;
+}
+.land {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/Mountains-1412683.svg);
+    animation: animate 25s linear infinite;
+}
+h2 {
+    font-size: 100px;
+}
+@keyframes animate {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
