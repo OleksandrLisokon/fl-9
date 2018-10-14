@@ -54,7 +54,7 @@ h2 {
 }
 .water h2 {
   color: #006699;
-  animation: stretch-water 1.5s ease-out alternate infinite running;
+  animation: stretch-water 1.5s ease-out alternate infinite;
 }
 
 @keyframes stretch-water {
