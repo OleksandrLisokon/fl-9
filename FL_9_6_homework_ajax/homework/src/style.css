@@ -31,7 +31,7 @@ form {
     height: 30%;
 }
 .water {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    background: url(https://hbr.org/resources/images/article_assets/2004/10/SEPT15_03_535621603.jpg) repeat-x; 
     animation: animate 15s linear infinite;
 }
 .land {
@@ -51,4 +51,42 @@ h2 {
     100% {
         background-position: 0% 50%
     }
+}
+.water h2 {
+  color: #006699;
+  animation: stretch-water 1.5s ease-out alternate infinite running;
+}
+
+@keyframes stretch-water {
+  0% {
+    transform: scale(.3);
+    color: #006666;
+
+  }
+  50% {
+    color: #0066cc;
+  }
+  100% {
+    transform: scale(1.5);
+    color: #0000ff;
+  }
+}
+.land h2 {
+  color: #006600;
+  animation: stretch-land 1.5s ease-out alternate infinite;
+}
+
+@keyframes stretch-land {
+  0% {
+    transform: scale(.3);
+    color: #006600;
+
+  }
+  50% {
+    color: #666633;
+  }
+  100% {
+    transform: scale(1.5);
+    color: #663300;
+  }
 }
