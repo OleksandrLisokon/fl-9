@@ -1,0 +1,173 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html, body {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    width: 100vw;
+}
+#container {
+    display: flex;
+    margin: 3em auto 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90vw;
+    
+}
+.item {
+    width: 25vw;
+    height: 25vw;
+    margin: 1rem;
+    position: relative;
+}
+.item img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    display: none;
+}
+.info span {
+    margin: 0 auto;
+    padding: 15px;
+}
+.likes::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    background: url('../img/icons.png') no-repeat -1px -2px;
+	width: 19px;
+    height: 17px;
+}
+.comments::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    background: url('../img/icons.png') no-repeat -22px -1px;
+	width: 19px;
+	height: 18px;
+}
+.viewMore {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    color:  rgb(31, 184, 208);
+    font-weight: bold;    
+}
+.hover {
+    opacity: 0.9;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: inset 0px 0px 0px 100% rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.pic {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.pic img {
+    width: 100%;
+    max-height: 100%;
+}
+.galeryText {
+    margin: 20px;
+}
+.galeryText img{
+    border-radius: 50%;
+    width: 2rem;
+}
+.galeryText span{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+.galeryText p{
+    margin: 5px;
+    padding: 5px;
+}
+.galeryText footer{
+    margin-top: 80%;
+    position: relative;
+    width: 100%;
+}
+footer a {
+    color: rgb(131, 131, 131);
+    text-decoration: none;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.prev {
+    position: absolute;
+	background: url(../img/icons.png) no-repeat -40px -24px;
+	width: 20px;
+	height: 28px;
+    top: 50%;
+    left: 100px;
+}
+.next {
+    position: absolute;
+	background: url(../img/icons.png) no-repeat 0 -24px;
+	width: 20px;
+	height: 28px;
+    top: 50%;
+    right: 100px;
+}
+.close:hover,
+.close:focus,
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    cursor: pointer;
+}
