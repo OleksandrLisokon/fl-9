@@ -41,40 +41,46 @@ $.getJSON('data/media.json', function (data) {
         }
       );
     
-    function galery(index) {
-        if (index < 0 && index >= content.length) {
+    function galery(i) {
+        if (i < 0 && i >= content.length) {
             return;
         } else {
-            $container.after(content[index]);
+            $container.append(content[i]);
             $('#galery').css('display', 'block');
         }
     };
+
+    function close() {
+        $('#galery').remove();
+    }
 
     $('.item').on('click', function (e) {
         e.preventDefault();
         let index = $('.item').index(this);
         galery(index);
 
+        const text = $('.galeryText p').text()
+        .replace(/\#.\S*/gi, '<a href="">' + '$&' + '</a>')
+        .replace(/\@.\S*/gi, '<a href="">$&</a>');
+        $('.galeryText p').html(text);
+
         $('.close').on('click', function (e) {
             e.preventDefault();
-            $('#galery').empty();
+            close();
         });
 
         $(document).keyup(function(e) {
-            if (e.keyCode == KEYCODE_ESC) $('#galery').css('display', 'none');
+            if (e.keyCode == KEYCODE_ESC) close();
         });
 
         $('.next').on('click', function (e) {
-            e.preventDefault();
-            $('#galery').empty();
+            close();
             index += 1;
             galery(index);
         });
 
-        $('.next').on('click', function (e) {
-            e.preventDefault();
-            index = $('.item').index(this);
-            $('#galery').empty();
+        $('.prev').on('click', function (e) {
+            close();
             index -= 1;
             galery(index);
         });
