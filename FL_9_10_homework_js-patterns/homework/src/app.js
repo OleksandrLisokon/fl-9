@@ -11,7 +11,7 @@ this.weekendDiscount - this.pizzaSlicePrice * this.nightDiscount} and you have $
 
 const getDiscount = (store) => {
     let date = new Date();
-    if (date.getHours() >= 23 && date.getHours() < 6) {
+    if (date.getHours() === 23 || date.getHours() < 6) {
         store.nightDiscount = 0.05;
     }
     if (date.getDay() === 0 || date.getDay() === 6) {
