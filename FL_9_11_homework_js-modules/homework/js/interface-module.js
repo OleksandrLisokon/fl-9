@@ -9,7 +9,7 @@ export function buttonClick (buttons) {
 
   updateScreen(calculationResult);
   
-  for(var i = 0; i < buttons.length; i++) {
+  for(let i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function(e) {
       let btnVal = this.getAttribute('value');
       inputVal = inputField.getAttribute('value');
@@ -78,7 +78,7 @@ export function buttonClick (buttons) {
   function updateScreen (displayValue) {
     displayValue.toString().substring(0, 10);
     inputField.setAttribute('value', displayValue);
-  };
+  }
   
   function isNumber (value) {
     return !isNaN(value);
@@ -86,18 +86,27 @@ export function buttonClick (buttons) {
   
   function isOperator (value) {
     return value === '/' || value === '*' || value === '+' || value === '-';
-  };
+  }
   
   function operate (a, b, operation) {
     a = parseFloat(a);
     b = parseFloat(b);
-    if (operation === '+') return math.plus(a, b);
-    if (operation === '-') return math.minus(a, b);
-    if (operation === '*') return math.times(a, b);
-    if (operation === '/') {
-      if (b !== 0) { return math.divide(a, b) }
-      else { return 'Error' }
+    if (operation === '+') {
+      return math.plus(a, b);
     }
-  };
+    if (operation === '-') {
+      return math.minus(a, b);
+    }
+    if (operation === '*') {
+      return math.times(a, b);
+    }
+    if (operation === '/') {
+      if (b !== 0) {
+        return math.divide(a, b)
+      } else {
+        return 'Error'
+      }
+    }
+  }
 }
 

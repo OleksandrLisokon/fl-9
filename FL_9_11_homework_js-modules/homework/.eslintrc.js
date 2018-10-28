@@ -4,6 +4,9 @@ module.exports = {
         "browser": true,
         "es6": true
     },
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "rules": {
         "no-console": 0,
         "no-extra-parens": ["error", "all"],
