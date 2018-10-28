@@ -13,7 +13,7 @@ export function buttonClick (buttons) {
     buttons[i].onclick = function(e) {
       let btnVal = this.getAttribute('value');
       inputVal = inputField.getAttribute('value');
-      console.log(prevEntry, inputVal, operation, calculationResult);
+      
       if (btnVal === 'all-clear') {
         inputVal = '0';
         updateScreen(inputVal);
