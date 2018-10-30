@@ -1,5 +1,5 @@
 import {buttonClick} from './interface-module';
-import '../css/styles.css';
+import '../styles/styles.css';
 
 const body = document.querySelector('body');
 
