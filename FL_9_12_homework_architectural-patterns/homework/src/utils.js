@@ -31,5 +31,37 @@ const template = `
 </div>
 `;
 
+const root = document.querySelector('#root');
+root.innerHTML = template;
+const tableBody = document.querySelector('#table-body');
 
-export {template};
+const renderList = (list, step) => {
+    if (!list.length) {
+        tableBody.innerHTML = 'No users found';
+    } else {
+        list.slice(0, step).forEach(el => {
+            createElement(el);
+        });
+    }
+};
+
+function createElement(item) {
+    const tmpl = `
+    <tr class='user' data-id=${ item.id }>
+        <td class='user-img'><img src=${ item.picture } alt='photo'></td>
+        <td>${ item.name }</td>
+        <td>${ item.location }</td>
+        <td>${ item.email }</td>
+        <td>${ item.phone }</td>
+        <td>${ item.timezone }</td>
+        <td><button class="btn-remove">Remove</button></td>
+    </tr>`;
+
+    tableBody.insertAdjacentHTML('beforeEnd', tmpl);
+};
+
+function getID(target) {
+    return target.parentElement.dataset.id;
+};
+
+export {renderList, getID};

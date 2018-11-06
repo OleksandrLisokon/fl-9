@@ -1,25 +1,26 @@
 const SHOW_MORE = 'SHOW_MORE';
 const REMOVE_USER = 'REMOVE_USER';
-const FILTER = 'FILTER';
+const SEARCH_USER = 'SEARCH_USER';
 
-function addAction(type, value) {
+const showMore = () => {
     return {
-        type: type,
-        value: value
+        type: SHOW_MORE,
+        payload: '',
     };
 };
 
-const removeItem = (index) => {
+const removeUser = (index) => {
     return {
         type: REMOVE_USER,
-        payload: index
+        payload: index,
     };
 };
 
-export {
-    SHOW_MORE,
-    REMOVE_USER,
-    FILTER,
-    removeItem,
-    addAction
+const searchUser = (value) => {
+    return {
+        type: SEARCH_USER,
+        payload: value,
+    };
 };
+
+export {SHOW_MORE, showMore, REMOVE_USER, removeUser, SEARCH_USER, searchUser};
