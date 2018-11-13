@@ -1,0 +1,9 @@
+<div *ngIf="isAdding" class="modal">
+  <input type="text" [(ngModel)]="newLesson.topic" placeholder="Topic" required>
+  <input type="date" [(ngModel)]="newLesson.date" placeholder="Date" required>
+  <input type="text" [(ngModel)]="newLesson.lecturer" placeholder="Lecturer" required>
+  <div>
+    <button class="btn" (click)="addNewLesson()">Add to the list</button>
+    <button class="btn" (click)="close()">Close modal</button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <button class="btn" (click)="toggleAdding()">Add new lesson</button>
+  <h1 *ngIf="!lessons.length">You haven't added anything yet</h1>
+  <table *ngIf="lessons.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Topic</th>
+        <th>Date</th>
+        <th>Lecturer</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lesson of lessons">
+        <td>{{lesson.id}}</td>
+        <td>
+          <span *ngIf="!isEdit">{{lesson.topic}}</span>
+          <input *ngIf="isEdit" type="text" [(ngModel)]="newLesson.topic">
+        </td>
+        <td>
+          <span *ngIf="!isEdit">{{lesson.date}}</span>
+          <input *ngIf="isEdit" type="text" [(ngModel)]="newLesson.date">
+        </td>
+        <td>
+          <span *ngIf="!isEdit">{{lesson.lecturer}}</span>
+          <input *ngIf="isEdit" type="text" [(ngModel)]="newLesson.lecturer">
+        </td>
+        <td>
+          <button class="btn" *ngIf="!isEdit" (click)="editLesson()">Edit</button>
+          <button class="btn"*ngIf="isEdit" (click)="saveLesson(lesson, newLesson)">Save</button>
+          <button class="btn" *ngIf="!isEdit" (click)="deleteLesson(lesson)">Delete</button>
+          <button class="btn" *ngIf="isEdit" (click)="cancelEdit()">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-modal [isAdding]="isAdding"></app-modal>
+
+
+
+
+

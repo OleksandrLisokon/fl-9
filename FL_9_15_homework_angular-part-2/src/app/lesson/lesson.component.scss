@@ -1,0 +1,39 @@
+.container {
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100wv;
+    height: 95vh;
+}
+.btn {
+    color: #3179bb;
+    width: 40%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #3179bb;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+input {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 50%;
+}
+table {
+    width: 100%;
+}
+thead {
+    background-color: rgba(255,255,255,0.3);
+}
+th {
+    padding: 1rem;
+}
+td {
+    width: 20%;
+    text-align: center;
+    vertical-align: middle;
+}
